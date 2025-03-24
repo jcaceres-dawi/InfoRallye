@@ -9,11 +9,11 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rally_id', 'driver_id', 'co_driver_id', 'racing_team_id'];
+    protected $fillable = ['driver_id', 'co_driver_id', 'racing_team_id'];
 
-    public function rally()
+    public function rallies()
     {
-        return $this->belongsTo(Rally::class);
+        return $this->belongsToMany(Rally::class, 'team_rally');
     }
 
     public function driver()

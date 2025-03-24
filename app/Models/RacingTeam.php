@@ -9,16 +9,11 @@ class RacingTeam extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'category_id'];
 
-    public function drivers()
+    public function category()
     {
-        return $this->hasMany(Driver::class);
-    }
-
-    public function coDrivers()
-    {
-        return $this->hasMany(CoDriver::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function teams()
