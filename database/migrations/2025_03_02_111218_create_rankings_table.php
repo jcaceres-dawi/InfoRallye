@@ -15,9 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('rally_id')->constrained()->onDelete('cascade');
             $table->foreignId('team_id')->constrained()->onDelete('cascade');
-            $table->integer('position');
             $table->time('total_time');
-            $table->integer('points')->nullable();
             $table->timestamps();
         });
     }
