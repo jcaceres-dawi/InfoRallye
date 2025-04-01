@@ -23,6 +23,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('categories.index') }}">Categorías</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('calendar.index') }}">Calendario</a>
+                    </li>
                 </ul>
             </div>
         </div>
