@@ -21,10 +21,16 @@
                         <a class="nav-link" href="{{ route('competitors.index') }}">Competidores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('categories.index') }}">Categorías</a>
+                        <a class="nav-link" href="{{ route('teams.index') }}">Equipos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('calendar.index') }}">Calendario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Clasificaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contacto</a>
                     </li>
                 </ul>
             </div>
