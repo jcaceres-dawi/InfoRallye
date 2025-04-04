@@ -19,7 +19,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.88722,
                 'end_point_lng' => -1.86472,
                 'length_km' => 14.99,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 37.95958, 'lng' => -1.87908],
                     ['lat' => 37.93806, 'lng' => -1.87833],
@@ -35,7 +35,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.84500,
                 'end_point_lng' => -1.74861,
                 'length_km' => 14.82,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 37.85472, 'lng' => -1.74722],
                 ]),
@@ -48,10 +48,10 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.82722,
                 'end_point_lng' => -1.85583,
                 'length_km' => 24.69,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'end_point_lng' => -1.85583,
                 'length_km' => 24.69,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 37.84000, 'lng' => -1.80556],
                     ['lat' => 37.82006, 'lng' => -1.83367],
@@ -69,7 +69,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 38.110333,
                 'end_point_lng' => -4.823972,
                 'length_km' => 12.50,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([]),
             ],
             [
@@ -80,7 +80,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 38.123611,
                 'end_point_lng' => -5.094917,
                 'length_km' => 15.30,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([]),
             ],
             [
@@ -91,7 +91,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 38.073750,
                 'end_point_lng' => -5.010250,
                 'length_km' => 10.00,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([]),
             ],
             [
@@ -102,7 +102,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.3892,
                 'end_point_lng' => -7.8283,
                 'length_km' => 13.75,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 42.3667, 'lng' => -7.8532],
                     ['lat' => 42.3750, 'lng' => -7.8412],
@@ -117,7 +117,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.4136,
                 'end_point_lng' => -7.8291,
                 'length_km' => 16.20,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 42.3872, 'lng' => -7.8487],
                     ['lat' => 42.3913, 'lng' => -7.8369],
@@ -132,7 +132,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.4152,
                 'end_point_lng' => -7.8123,
                 'length_km' => 20.30,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 42.3905, 'lng' => -7.8285],
                     ['lat' => 42.4003, 'lng' => -7.8195],
@@ -148,7 +148,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.2510,
                 'end_point_lng' => -8.7010,
                 'length_km' => 14.50,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 42.2389, 'lng' => -8.7156],
                     ['lat' => 42.2445, 'lng' => -8.7103],
@@ -163,7 +163,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.2801,
                 'end_point_lng' => -8.6800,
                 'length_km' => 18.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 42.2645, 'lng' => -8.7050],
                     ['lat' => 42.2700, 'lng' => -8.6950],
@@ -178,7 +178,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.2900,
                 'end_point_lng' => -8.7101,
                 'length_km' => 16.20,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 42.2760, 'lng' => -8.7230],
                     ['lat' => 42.2800, 'lng' => -8.7150],
@@ -194,7 +194,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.3755,
                 'end_point_lng' => -5.8267,
                 'length_km' => 14.00,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 43.3650, 'lng' => -5.8380],
                     ['lat' => 43.3700, 'lng' => -5.8300],
@@ -209,7 +209,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.3970,
                 'end_point_lng' => -5.8105,
                 'length_km' => 15.50,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 43.3800, 'lng' => -5.8250],
                     ['lat' => 43.3870, 'lng' => -5.8170],
@@ -224,7 +224,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4000,
                 'end_point_lng' => -5.7900,
                 'length_km' => 17.80,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 43.3833, 'lng' => -5.8033],
                     ['lat' => 43.3900, 'lng' => -5.7950],
@@ -240,7 +240,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4300,
                 'end_point_lng' => -4.7333,
                 'length_km' => 12.80,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 43.4150, 'lng' => -4.7450],
                     ['lat' => 43.4200, 'lng' => -4.7380],
@@ -255,7 +255,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4512,
                 'end_point_lng' => -4.7123,
                 'length_km' => 14.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 43.4400, 'lng' => -4.7250],
                     ['lat' => 43.4450, 'lng' => -4.7180],
@@ -270,7 +270,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4670,
                 'end_point_lng' => -4.6980,
                 'length_km' => 16.40,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 43.4520, 'lng' => -4.7080],
                     ['lat' => 43.4600, 'lng' => -4.7025],
@@ -285,7 +285,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.1300,
                 'end_point_lng' => 1.1450,
                 'length_km' => 11.50,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 41.1150, 'lng' => 1.1470],
                     ['lat' => 41.1200, 'lng' => 1.1460],
@@ -300,7 +300,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.1600,
                 'end_point_lng' => 1.1300,
                 'length_km' => 15.30,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 41.1450, 'lng' => 1.1350],
                     ['lat' => 41.1500, 'lng' => 1.1320],
@@ -315,7 +315,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.1800,
                 'end_point_lng' => 1.1200,
                 'length_km' => 18.40,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 41.1650, 'lng' => 1.1250],
                     ['lat' => 41.1720, 'lng' => 1.1230],
@@ -330,7 +330,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.3892,
                 'end_point_lng' => -7.8283,
                 'length_km' => 13.75,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 42.3667, 'lng' => -7.8532],
                     ['lat' => 42.3750, 'lng' => -7.8412],
@@ -345,7 +345,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.4136,
                 'end_point_lng' => -7.8291,
                 'length_km' => 16.20,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 42.3872, 'lng' => -7.8487],
                     ['lat' => 42.3913, 'lng' => -7.8369],
@@ -360,7 +360,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.4152,
                 'end_point_lng' => -7.8123,
                 'length_km' => 20.30,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 42.3905, 'lng' => -7.8285],
                     ['lat' => 42.4003, 'lng' => -7.8195],
@@ -376,7 +376,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.2510,
                 'end_point_lng' => -8.7010,
                 'length_km' => 14.50,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 42.2389, 'lng' => -8.7156],
                     ['lat' => 42.2445, 'lng' => -8.7103],
@@ -391,7 +391,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.2801,
                 'end_point_lng' => -8.6800,
                 'length_km' => 18.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 42.2645, 'lng' => -8.7050],
                     ['lat' => 42.2700, 'lng' => -8.6950],
@@ -406,7 +406,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.2900,
                 'end_point_lng' => -8.7101,
                 'length_km' => 16.20,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 42.2760, 'lng' => -8.7230],
                     ['lat' => 42.2800, 'lng' => -8.7150],
@@ -422,7 +422,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.3755,
                 'end_point_lng' => -5.8267,
                 'length_km' => 14.00,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 43.3650, 'lng' => -5.8380],
                     ['lat' => 43.3700, 'lng' => -5.8300],
@@ -437,7 +437,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.3970,
                 'end_point_lng' => -5.8105,
                 'length_km' => 15.50,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 43.3800, 'lng' => -5.8250],
                     ['lat' => 43.3870, 'lng' => -5.8170],
@@ -452,7 +452,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4000,
                 'end_point_lng' => -5.7900,
                 'length_km' => 17.80,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 43.3833, 'lng' => -5.8033],
                     ['lat' => 43.3900, 'lng' => -5.7950],
@@ -468,7 +468,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4300,
                 'end_point_lng' => -4.7333,
                 'length_km' => 12.80,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 43.4150, 'lng' => -4.7450],
                     ['lat' => 43.4200, 'lng' => -4.7380],
@@ -483,7 +483,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4512,
                 'end_point_lng' => -4.7123,
                 'length_km' => 14.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 43.4400, 'lng' => -4.7250],
                     ['lat' => 43.4450, 'lng' => -4.7180],
@@ -498,7 +498,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 43.4670,
                 'end_point_lng' => -4.6980,
                 'length_km' => 16.40,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 43.4520, 'lng' => -4.7080],
                     ['lat' => 43.4600, 'lng' => -4.7025],
@@ -513,7 +513,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.1300,
                 'end_point_lng' => 1.1450,
                 'length_km' => 11.50,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 41.1150, 'lng' => 1.1470],
                     ['lat' => 41.1200, 'lng' => 1.1460],
@@ -528,7 +528,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.1600,
                 'end_point_lng' => 1.1300,
                 'length_km' => 15.30,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 41.1450, 'lng' => 1.1350],
                     ['lat' => 41.1500, 'lng' => 1.1320],
@@ -543,7 +543,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.1800,
                 'end_point_lng' => 1.1200,
                 'length_km' => 18.40,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 41.1650, 'lng' => 1.1250],
                     ['lat' => 41.1720, 'lng' => 1.1230],
@@ -558,7 +558,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.0850,
                 'end_point_lng' => -2.1155,
                 'length_km' => 13.60,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 40.0780, 'lng' => -2.1250],
                     ['lat' => 40.0800, 'lng' => -2.1180],
@@ -573,7 +573,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.1000,
                 'end_point_lng' => -2.0900,
                 'length_km' => 15.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 40.0850, 'lng' => -2.1000],
                     ['lat' => 40.0900, 'lng' => -2.0950],
@@ -588,7 +588,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.1200,
                 'end_point_lng' => -2.0800,
                 'length_km' => 18.30,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 40.1050, 'lng' => -2.0850],
                     ['lat' => 40.1100, 'lng' => -2.0800],
@@ -603,7 +603,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.6100,
                 'end_point_lng' => -5.5600,
                 'length_km' => 14.00,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 42.6050, 'lng' => -5.5650],
                     ['lat' => 42.6100, 'lng' => -5.5600],
@@ -617,7 +617,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.6250,
                 'end_point_lng' => -5.5400,
                 'length_km' => 16.80,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 42.6200, 'lng' => -5.5450],
                     ['lat' => 42.6250, 'lng' => -5.5400],
@@ -631,7 +631,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 42.6350,
                 'end_point_lng' => -5.5300,
                 'length_km' => 18.30,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 42.6300, 'lng' => -5.5350],
                     ['lat' => 42.6350, 'lng' => -5.5300],
@@ -645,7 +645,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 29.0600,
                 'end_point_lng' => -13.4900,
                 'length_km' => 12.90,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 29.0550, 'lng' => -13.4950],
                     ['lat' => 29.0600, 'lng' => -13.4900],
@@ -659,7 +659,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 29.0750,
                 'end_point_lng' => -13.4700,
                 'length_km' => 15.30,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 29.0700, 'lng' => -13.4750],
                     ['lat' => 29.0750, 'lng' => -13.4700],
@@ -673,7 +673,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 29.0850,
                 'end_point_lng' => -13.4600,
                 'length_km' => 16.00,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 29.0800, 'lng' => -13.4650],
                     ['lat' => 29.0850, 'lng' => -13.4600],
@@ -687,7 +687,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.1800,
                 'end_point_lng' => -3.5800,
                 'length_km' => 14.50,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 37.1750, 'lng' => -3.5850],
                     ['lat' => 37.1800, 'lng' => -3.5800],
@@ -701,7 +701,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.1950,
                 'end_point_lng' => -3.5600,
                 'length_km' => 13.20,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 37.1900, 'lng' => -3.5650],
                     ['lat' => 37.1950, 'lng' => -3.5600],
@@ -715,7 +715,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.2050,
                 'end_point_lng' => -3.5500,
                 'length_km' => 16.00,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 37.2000, 'lng' => -3.5550],
                     ['lat' => 37.2050, 'lng' => -3.5500],
@@ -729,7 +729,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.6100,
                 'end_point_lng' => -3.1500,
                 'length_km' => 10.80,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 40.6050, 'lng' => -3.1550],
                     ['lat' => 40.6100, 'lng' => -3.1500],
@@ -743,7 +743,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.6250,
                 'end_point_lng' => -3.1300,
                 'length_km' => 12.10,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 40.6200, 'lng' => -3.1350],
                     ['lat' => 40.6250, 'lng' => -3.1300],
@@ -757,7 +757,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.6350,
                 'end_point_lng' => -3.1200,
                 'length_km' => 14.50,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 40.6300, 'lng' => -3.1250],
                     ['lat' => 40.6350, 'lng' => -3.1200],
@@ -771,7 +771,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 38.8900,
                 'end_point_lng' => -6.9400,
                 'length_km' => 18.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 38.8850, 'lng' => -6.9450],
                     ['lat' => 38.8900, 'lng' => -6.9400],
@@ -785,7 +785,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 38.9050,
                 'end_point_lng' => -6.9200,
                 'length_km' => 20.50,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 38.9000, 'lng' => -6.9250],
                     ['lat' => 38.9050, 'lng' => -6.9200],
@@ -799,7 +799,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 38.9150,
                 'end_point_lng' => -6.9100,
                 'length_km' => 22.70,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 38.9100, 'lng' => -6.9150],
                     ['lat' => 38.9150, 'lng' => -6.9100],
@@ -813,7 +813,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.6900,
                 'end_point_lng' => -1.6900,
                 'length_km' => 15.20,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 37.6850, 'lng' => -1.6950],
                     ['lat' => 37.6900, 'lng' => -1.6900],
@@ -827,7 +827,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.7050,
                 'end_point_lng' => -1.6700,
                 'length_km' => 17.10,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 37.7000, 'lng' => -1.6750],
                     ['lat' => 37.7050, 'lng' => -1.6700],
@@ -841,7 +841,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 37.7150,
                 'end_point_lng' => -1.6600,
                 'length_km' => 19.40,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 37.7100, 'lng' => -1.6650],
                     ['lat' => 37.7150, 'lng' => -1.6600],
@@ -855,7 +855,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.2800,
                 'end_point_lng' => -0.4600,
                 'length_km' => 22.20,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 40.2750, 'lng' => -0.4650],
                     ['lat' => 40.2800, 'lng' => -0.4600],
@@ -869,7 +869,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.2950,
                 'end_point_lng' => -0.4400,
                 'length_km' => 24.60,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 40.2900, 'lng' => -0.4450],
                     ['lat' => 40.2950, 'lng' => -0.4400],
@@ -883,7 +883,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.3050,
                 'end_point_lng' => -0.4300,
                 'length_km' => 26.80,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 40.3000, 'lng' => -0.4350],
                     ['lat' => 40.3050, 'lng' => -0.4300],
@@ -897,7 +897,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.6600,
                 'end_point_lng' => -0.8700,
                 'length_km' => 13.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 41.6550, 'lng' => -0.8750],
                     ['lat' => 41.6600, 'lng' => -0.8700],
@@ -911,7 +911,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.6750,
                 'end_point_lng' => -0.8500,
                 'length_km' => 14.50,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 41.6700, 'lng' => -0.8550],
                     ['lat' => 41.6750, 'lng' => -0.8500],
@@ -925,7 +925,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 41.6850,
                 'end_point_lng' => -0.8400,
                 'length_km' => 16.20,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 41.6800, 'lng' => -0.8450],
                     ['lat' => 41.6850, 'lng' => -0.8400],
@@ -939,7 +939,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.0850,
                 'end_point_lng' => -2.1155,
                 'length_km' => 13.60,
-                'surface' => 'Asphalt',
+                'surface' => 'Asfalto',
                 'route' => json_encode([
                     ['lat' => 40.0780, 'lng' => -2.1250],
                     ['lat' => 40.0800, 'lng' => -2.1180],
@@ -954,7 +954,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.1000,
                 'end_point_lng' => -2.0900,
                 'length_km' => 15.00,
-                'surface' => 'Gravel',
+                'surface' => 'Grava',
                 'route' => json_encode([
                     ['lat' => 40.0850, 'lng' => -2.1000],
                     ['lat' => 40.0900, 'lng' => -2.0950],
@@ -969,7 +969,7 @@ class StagesSeeder extends Seeder
                 'end_point_lat' => 40.1200,
                 'end_point_lng' => -2.0800,
                 'length_km' => 18.30,
-                'surface' => 'Mixed',
+                'surface' => 'Mixto',
                 'route' => json_encode([
                     ['lat' => 40.1050, 'lng' => -2.0850],
                     ['lat' => 40.1100, 'lng' => -2.0800],
