@@ -7,7 +7,7 @@
     <form method="GET" action="{{ route('calendar.index') }}" class="mb-4">
         <div class="row">
             <div class="col-md-4">
-                <select name="category_id" class="form-control">
+                <select name="category_id" class="form-select">
                     <option value="">Todas las categorías</option>
                     @foreach ($categories as $category)
                     <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
