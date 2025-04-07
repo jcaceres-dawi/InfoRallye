@@ -30,7 +30,7 @@
                         <a class="nav-link" href="">Clasificaciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contacto</a>
+                        <a class="nav-link" href="{{ route('contact.index') }}">Contacto</a>
                     </li>
                 </ul>
             </div>
