@@ -1,7 +1,10 @@
 @component('mail::message')
+
 # Nuevo mensaje recibido desde el formulario de contacto
 
-**Asunto:** {{ $title }}
+**Asunto:**
+
+{{ $title }}
 
 **Mensaje enviado por el usuario:**
 
