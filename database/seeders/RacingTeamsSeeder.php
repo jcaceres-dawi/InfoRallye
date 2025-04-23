@@ -24,7 +24,16 @@ class RacingTeamsSeeder extends Seeder
             ['name' => 'TH-Trucks Rally Team', 'category_id' => 4],
             ['name' => 'Mavisa Sport', 'category_id' => 1],
             ['name' => 'Escudería Faraón', 'category_id' => 2],
+            ['name' => 'Hyundai España', 'category_id' => 1],  // Nuevo equipo
+            ['name' => 'Citroën España', 'category_id' => 2],  // Nuevo equipo
+            ['name' => 'Peugeot Sport', 'category_id' => 3],  // Nuevo equipo
+            ['name' => 'Ford España', 'category_id' => 3],    // Nuevo equipo
+            ['name' => 'Toyota Gazoo Racing Spain', 'category_id' => 1], // Nuevo equipo
+            ['name' => 'M-Sport', 'category_id' => 2],        // Nuevo equipo
+            ['name' => 'Skoda Motorsport', 'category_id' => 3], // Nuevo equipo
+            ['name' => 'Repsol Rally Team', 'category_id' => 4], // Nuevo equipo
         ];
+
 
         foreach ($teams as $team) {
             RacingTeam::create([
