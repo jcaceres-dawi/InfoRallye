@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Categorías')
+
 @section('content')
 <div class="container">
     <h1 class="mb-4">Categorías</h1>
@@ -23,33 +25,41 @@
         background-size: cover;
         background-position: center;
         height: 300px;
-        color: white;
+        color: var(--blanco-puro);
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
+        border-radius: 12px;
         position: relative;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-align: center;
+        padding: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
     }
 
     .category-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 8px;
-        transition: background-color 0.3s ease-in-out;
+        inset: 0;
+        background-color: rgba(28, 28, 28, 0.6);
+        /* negro carbón con opacidad */
+        border-radius: 12px;
+        transition: background-color 0.3s ease;
     }
 
     .category-card:hover .overlay {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(28, 28, 28, 0.4);
+    }
+
+    .category-card h3 {
+        z-index: 1;
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--blanco-puro);
     }
 
     .category-link {

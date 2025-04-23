@@ -30,7 +30,7 @@
             </div>
 
             <div class="col-md-4 mb-3 d-flex align-items-end">
-                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <button type="submit" class="btn btn-primary w-100">Filtrar</button>
             </div>
         </div>
     </form>
@@ -53,5 +53,53 @@
             </tbody>
         </table>
     </div>
+    <div>
+        {{ $competitors->links('pagination::bootstrap-5') }}
+    </div>
 </div>
+
+@endsection
+
+@section('styles')
+<style>
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-select {
+        border-radius: 0.375rem;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background-color: var(--rojo-rallye);
+        border-color: var(--rojo-rallye);
+    }
+
+    .btn-primary:hover {
+        background-color: #c00500;
+        border-color: #c00500;
+    }
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+    }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-responsive {
+        margin-top: 1rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem !important;
+    }
+</style>
 @endsection
