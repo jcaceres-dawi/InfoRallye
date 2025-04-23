@@ -20,19 +20,18 @@
     <div class="row justify-content-center">
         @foreach ($rally->stages as $stage)
         <div class="col-md-8 mb-4">
-            <div class="card shadow-sm border-0">
-                <div class="card-body text-center">
-                    <h4 class="card-title">{{ $stage->name }}</h4>
-                    <p class="card-text mb-2">
-                        <strong>Longitud:</strong> {{ $stage->length_km }} km
-                    </p>
-                    <p class="card-text">
-                        <strong>Superficie:</strong> {{ $stage->surface }}
-                    </p>
+            <a href="{{ route('stages.show', $stage->id) }}" class="text-decoration-none text-dark">
+                <div class="card shadow-sm border-0 hover-shadow">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">{{ $stage->name }}</h4>
+                        <p class="card-text mb-2"><strong>Longitud:</strong> {{ $stage->length_km }} km</p>
+                        <p class="card-text"><strong>Superficie:</strong> {{ $stage->surface }}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         @endforeach
+
     </div>
 </div>
 @endsection
