@@ -101,5 +101,17 @@
     .mb-4 {
         margin-bottom: 1.5rem !important;
     }
+
+    .page-item .page-link {
+        color: var(--rojo-rallye);
+        border-color: var(--rojo-rallye);
+        background-color: var(--gris-claro);
+    }
+
+    .page-item.active .page-link {
+        background-color: var(--rojo-rallye);
+        border-color: var(--rojo-rallye);
+        color: white;
+    }
 </style>
 @endsection

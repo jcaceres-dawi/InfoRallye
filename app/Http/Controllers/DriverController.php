@@ -20,13 +20,13 @@ class DriverController extends Controller
         })->pluck('id');
 
         if ($role == 'driver') {
-            $competitors = Driver::whereIn('racing_team_id', $teams)->paginate(5);
+            $competitors = Driver::whereIn('racing_team_id', $teams)->paginate(8);
         } elseif ($role == 'co_driver') {
-            $competitors = CoDriver::whereIn('racing_team_id', $teams)->paginate(5);
+            $competitors = CoDriver::whereIn('racing_team_id', $teams)->paginate(8);
         } else {
             $drivers = Driver::whereIn('racing_team_id', $teams);
             $coDrivers = CoDriver::whereIn('racing_team_id', $teams);
-            $competitors = $drivers->union($coDrivers)->paginate(5);
+            $competitors = $drivers->union($coDrivers)->paginate(9);
         }
 
         $categories = Category::all();
