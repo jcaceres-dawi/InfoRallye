@@ -41,7 +41,7 @@
             </thead>
             <tbody>
                 @foreach ($upcomingRallies as $rally)
-                <tr onclick="location.href='{{ route('categories.index') }}'" style="cursor: pointer;">
+                <tr onclick="location.href='{{ route('rallys.index', $rally->id) }}'" style="cursor: pointer;">
                     <td>{{ $rally->name }}</td>
                     <td>{{ $rally->location }}</td>
                     <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
@@ -65,7 +65,7 @@
             </thead>
             <tbody>
                 @foreach ($pastRallies as $rally)
-                <tr onclick="location.href='{{ route('categories.index') }}'" style="cursor: pointer;">
+                <tr onclick="location.href='{{ route('rallys.index', $rally->id) }}'" style="cursor: pointer;">
                     <td>{{ $rally->name }}</td>
                     <td>{{ $rally->location }}</td>
                     <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
