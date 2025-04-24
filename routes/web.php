@@ -26,3 +26,5 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.index
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 Route::get('/stages/{stage}', [StageController::class, 'show'])->name('stages.show');
+
+Route::get('stage/{stage}/results/pdf', [StageController::class, 'generatePdf'])->name('stage.results.pdf');

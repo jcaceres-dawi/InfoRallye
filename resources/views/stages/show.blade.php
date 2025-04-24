@@ -12,6 +12,18 @@
     </div>
 
     <div id="map" style="height: 500px;" class="rounded shadow-sm"></div>
+    
+    @if(\Carbon\Carbon::parse($stage->rally->end_date)->isPast())
+        <div class="mt-4 text-center">
+            <a href="{{ route('stage.results.pdf', $stage->id) }}" class="btn btn-primary">
+                Ver resultados en PDF
+            </a>
+        </div>
+    @else
+        <div class="mt-4 text-center">
+            <p>El tramo aún no ha finalizado. Los resultados estarán disponibles cuando el tramo se complete.</p>
+        </div>
+    @endif
 </div>
 
 @php
