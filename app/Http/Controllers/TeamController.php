@@ -18,7 +18,7 @@ class TeamController extends Controller
             ->when($categoryId, function ($query) use ($categoryId) {
                 $query->where('category_id', $categoryId);
             })
-            ->get();
+            ->paginate(9);
 
         return view('teams.index', compact('categories', 'teams'));
     }
