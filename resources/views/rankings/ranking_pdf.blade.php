@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Resultados {{ $stage->name }}</title>
+    <title>Clasificación final - {{ $rally->name }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,7 +40,6 @@
             color: #fff;
         }
 
-        /* Colores de medalla */
         .gold {
             background-color: #DAA520;
             color: white;
@@ -63,40 +62,39 @@
         <img src="{{ public_path('images/logo_sin_fondo.png') }}" class="logo" alt="Logo">
     </div>
 
-    <h1>Resultados - {{ $stage->name }}</h1>
+    <h1>Clasificación final - {{ $rally->name }}</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Posición</th>
                 <th>Equipo</th>
-                <th>Tiempo</th>
+                <th>Tiempo total</th>
                 <th>Diferencia</th>
             </tr>
         </thead>
         <tbody>
             @php
-            $leaderTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $results->first()->time);
+            $leaderSeconds = $rankings->first()['total_seconds'];
             @endphp
 
-            @foreach($results as $index => $result)
+            @foreach($rankings as $index => $entry)
             @php
-            $current = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $result->time);
-            $diff = $leaderTime->diff($current)->format('%H:%I:%S');
+            $diffSeconds = $entry['total_seconds'] - $leaderSeconds;
+            $diffFormatted = $diffSeconds > 0 ? gmdate('H:i:s', $diffSeconds) : '-';
 
-            // Definir los colores de medalla
             $medalClass = match($index) {
-            0 => 'gold', // Oro
-            1 => 'silver', // Plata
-            2 => 'bronze', // Bronce
+            0 => 'gold',
+            1 => 'silver',
+            2 => 'bronze',
             default => ''
             };
             @endphp
             <tr class="{{ $medalClass }}">
                 <td>{{ $index + 1 }}</td>
-                <td>{{ $result->team->racingTeam->name ?? 'Sin equipo' }}</td>
-                <td>{{ $current->format('H:i:s') }}</td>
-                <td>{{ $index === 0 ? '-' : $diff }}</td>
+                <td>{{ $entry['team']->racingTeam->name ?? 'Sin equipo' }}</td>
+                <td>{{ $entry['formatted_time'] }}</td>
+                <td>{{ $diffFormatted }}</td>
             </tr>
             @endforeach
         </tbody>

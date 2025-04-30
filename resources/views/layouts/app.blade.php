@@ -120,7 +120,7 @@
                         <a class="nav-link" href="{{ route('calendar.index') }}">Calendario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clasificaciones</a>
+                        <a class="nav-link" href="{{ route('rankings.index') }}">Clasificaciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact.index') }}">Contacto</a>

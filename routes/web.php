@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\RallyController;
+use App\Http\Controllers\RankingController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -26,5 +27,8 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.index
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 Route::get('/stages/{stage}', [StageController::class, 'show'])->name('stages.show');
-
 Route::get('stage/{stage}/results/pdf', [StageController::class, 'generatePdf'])->name('stage.results.pdf');
+
+Route::get('/rankings', [RankingController::class, 'index'])->name('rankings.index');
+Route::get('/rankings/{rally}', [RankingController::class, 'show'])->name('rankings.show');
+Route::get('/rankings/{rally}/pdf', [RankingController::class, 'downloadPdf'])->name('rankings.pdf');
