@@ -25,7 +25,7 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        $rallies = Rally::where('category_id', $category->id)->get();
+        $rallies = Rally::where('category_id', $category->id)->orderBy('start_date')->get();
         return view('categories.show', compact('category', 'rallies'));
     }
 }
