@@ -125,6 +125,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact.index') }}">Contacto</a>
                     </li>
+
+                    @if(session('admin_authenticated'))
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning fw-bold" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Panel Admin
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+                            <li>
+                                <form method="POST" action="{{ route('admin.logout') }}">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item text-danger">Cerrar sesión</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </div>
