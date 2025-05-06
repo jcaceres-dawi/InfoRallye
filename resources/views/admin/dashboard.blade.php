@@ -15,6 +15,7 @@
                 'Pilotos' => 'drivers',
                 'Copilotos' => 'codrivers',
                 'Equipos' => 'racing_teams',
+                'Participaciones' => 'team_rally',
             ];
         @endphp
 

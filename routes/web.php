@@ -67,5 +67,8 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
     Route::resource('drivers', Admin\DriverController::class);
     Route::resource('codrivers', Admin\CoDriverController::class);
     Route::resource('racing_teams', Admin\RacingTeamController::class);
+    Route::get('team_rally', [Admin\TeamRallyController::class, 'index'])->name('team_rally.index');
+    Route::get('team_rally/create', [Admin\TeamRallyController::class, 'create'])->name('team_rally.create');
+    Route::post('team_rally', [Admin\TeamRallyController::class, 'store'])->name('team_rally.store');
+    Route::delete('team_rally/{teamId}/{rallyId}', [Admin\TeamRallyController::class, 'destroy'])->name('team_rally.destroy');
 });
-
