@@ -11,7 +11,9 @@
         @php
             $sections = [
                 'Rallyes' => 'rallies',
-                'Tramos' => 'stages'
+                'Tramos' => 'stages',
+                'Pilotos' => 'drivers',
+                
             ];
         @endphp
 
