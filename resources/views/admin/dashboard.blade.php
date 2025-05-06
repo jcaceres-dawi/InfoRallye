@@ -13,7 +13,7 @@
                 'Rallyes' => 'rallies',
                 'Tramos' => 'stages',
                 'Pilotos' => 'drivers',
-                
+                'Copilotos' => 'codrivers',
             ];
         @endphp
 

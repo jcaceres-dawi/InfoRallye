@@ -65,5 +65,6 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
     Route::resource('rallies', Admin\RallyController::class);
     Route::resource('stages', Admin\StageController::class);
     Route::resource('drivers', Admin\DriverController::class);
+    Route::resource('codrivers', Admin\CoDriverController::class);
 });
 
