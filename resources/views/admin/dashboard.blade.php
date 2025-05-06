@@ -14,6 +14,7 @@
                 'Tramos' => 'stages',
                 'Pilotos' => 'drivers',
                 'Copilotos' => 'codrivers',
+                'Equipos' => 'racing_teams',
             ];
         @endphp
 
