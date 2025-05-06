@@ -15,10 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('rally_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->decimal('start_point_lat', 10, 7);
-            $table->decimal('start_point_lng', 10, 7);
-            $table->decimal('end_point_lat', 10, 7);
-            $table->decimal('end_point_lng', 10, 7);
             $table->decimal('length_km', 5, 2);
             $table->enum('surface', ['Asfalto', 'Grava', 'Mixto']);
             $table->json('route')->nullable();

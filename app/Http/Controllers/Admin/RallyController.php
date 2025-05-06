@@ -11,7 +11,7 @@ class RallyController extends Controller
 {
     public function index()
     {
-        $rallies = Rally::orderBy('start_date')->get();
+        $rallies = Rally::with('category')->orderBy('start_date')->get();
         return view('admin.rallies.index', compact('rallies'));
     }
 

@@ -51,6 +51,12 @@
             color: var(--rojo-rallye) !important;
         }
 
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            /* opcional: evita salto visual */
+        }
+
         h1 {
             color: var(--rojo-rallye);
         }
@@ -128,7 +134,7 @@
 
                     @if(session('admin_authenticated'))
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-warning fw-bold" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-warning fw-bold" href="{{ route('admin.login') }}" id="adminDropdown" role="button">
                             Panel Admin
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
@@ -141,6 +147,7 @@
                         </ul>
                     </li>
                     @endif
+
                 </ul>
             </div>
         </div>
@@ -169,7 +176,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    @stack('scripts')
 </body>
 
 </html>

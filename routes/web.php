@@ -63,5 +63,6 @@ Route::post('/admin/logout', function () {
 
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('rallies', Admin\RallyController::class);
+    Route::resource('stages', Admin\StageController::class);
 });
 

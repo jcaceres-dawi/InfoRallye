@@ -12,10 +12,6 @@ class Stage extends Model
     protected $fillable = [
         'rally_id',
         'name',
-        'start_point_lat',
-        'start_point_lng',
-        'end_point_lat',
-        'end_point_lng',
         'length_km',
         'surface',
         'route'
