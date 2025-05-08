@@ -17,4 +17,22 @@
     </select>
 </div>
 
-<button type="submit" class="btn btn-success">Guardar</button>
+<button type="submit" class="btn btn-dark">Guardar</button>
+
+@section('styles')
+<style>
+    .btn-dark {
+        background-color: #1C1C1C;
+        border-color: #1C1C1C;
+    }
+
+    .btn-dark:hover {
+        background-color: #E10600; 
+        border-color: #E10600;
+    }
+
+    h2 {
+        color: #E10600;
+    }
+</style>
+@endsection

@@ -41,3 +41,31 @@
     </div>
 </div>
 @endsection
+
+@section('styles')
+<style>
+    h2 {
+        color: var(--rojo-rallye);
+    }
+
+    .btn-dark {
+        background-color: var(--negro-carbon);
+        border-color: var(--negro-carbon);
+    }
+
+    .btn-dark:hover {
+        background-color: var(--rojo-rallye);
+        border-color: var(--rojo-rallye);
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #c82333;
+    }
+</style>
+@endsection

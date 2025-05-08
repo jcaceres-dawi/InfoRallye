@@ -16,8 +16,8 @@
                     <th>Nombre</th>
                     <th>Localización</th>
                     <th>Página web</th>
-                    <th>Fecha Inicio</th>
-                    <th>Fecha Fin</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
                     <th>Categoría</th>
                     <th>Acciones</th>
                 </tr>
@@ -28,8 +28,8 @@
                     <td>{{ $rally->name }}</td>
                     <td>{{ $rally->location }}</td>
                     <td><a href="{{ $rally->website }}" target="_blank">{{ $rally->website }}</a></td>
-                    <td>{{ $rally->start_date }}</td>
-                    <td>{{ $rally->end_date }}</td>
+                    <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($rally->end_date)->format('d/m/Y') }}</td>
                     <td>{{ $rally->category->name ?? 'Sin categoría'}}</td>
                     <td>
                         <div class="d-flex">
@@ -47,4 +47,42 @@
         </table>
     </div>
 </div>
+@endsection
+
+@section('styles')
+<style>
+    h2 {
+        color: var(--rojo-rallye);
+    }
+
+    .btn-dark {
+        background-color: var(--negro-carbon);
+        border-color: var(--negro-carbon);
+    }
+
+    .btn-dark:hover {
+        background-color: var(--rojo-rallye);
+        border-color: var(--rojo-rallye);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #c82333;
+    }
+</style>
 @endsection
