@@ -54,7 +54,7 @@
         </table>
     </div>
     <div>
-        {{ $competitors->links('pagination::bootstrap-5') }}
+        {{ $competitors->appends(request()->query())->links('pagination::bootstrap-5') }}
     </div>
 </div>
 
