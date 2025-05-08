@@ -29,7 +29,7 @@
                     <td>{{ $stage->surface }}</td>
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('admin.stages.edit', $stage) }}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{{ route('admin.stages.edit', $stage) }}" class="btn btn-sm btn-primary me-2">Editar</a>
                             <form action="{{ route('admin.stages.destroy', $stage) }}" method="POST" style="display:inline;">
                                 @csrf @method('DELETE')
                                 <button class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar tramo?')">Eliminar</button>

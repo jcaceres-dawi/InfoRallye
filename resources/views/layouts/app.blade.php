@@ -23,6 +23,10 @@
             background-color: var(--gris-claro);
             color: var(--negro-carbon);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
         }
 
         .navbar {
@@ -74,6 +78,8 @@
         .container {
             padding-top: 2rem;
             padding-bottom: 2rem;
+            flex: 1;
+            /* Hace que el contenedor principal ocupe el espacio disponible */
         }
 
         .footer {
@@ -81,6 +87,9 @@
             color: var(--gris-oscuro);
             font-size: 0.85rem;
             text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+            /* Empuja el footer al fondo */
         }
 
         .footer p {
@@ -176,7 +185,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     @stack('scripts')
 </body>

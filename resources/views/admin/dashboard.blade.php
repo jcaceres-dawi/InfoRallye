@@ -16,6 +16,7 @@
                 'Copilotos' => 'codrivers',
                 'Equipos' => 'racing_teams',
                 'Participaciones' => 'team_rally',
+                'Resultados Tramos' => 'stage_results',
             ];
         @endphp
 

@@ -6,6 +6,7 @@ use App\Models\Driver;
 use App\Models\RacingTeam;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 
 class DriverController extends Controller
 {
@@ -29,7 +30,12 @@ class DriverController extends Controller
             'racing_team_id' => 'nullable|exists:racing_teams,id',
         ]);
 
-        Driver::create($request->only('first_name', 'last_name', 'racing_team_id'));
+        $driver = Driver::create($request->only('first_name', 'last_name', 'racing_team_id'));
+
+        Team::updateOrCreate(
+            ['racing_team_id' => $request->racing_team_id],
+            ['driver_id' => $driver->id]
+        );
 
         return redirect()->route('admin.drivers.index')->with('success', 'Piloto creado correctamente.');
     }

@@ -6,6 +6,7 @@ use App\Models\RacingTeam;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 
 class RacingTeamController extends Controller
 {
@@ -28,7 +29,13 @@ class RacingTeamController extends Controller
             'category_id' => 'required|exists:categories,id',
         ]);
 
-        RacingTeam::create($request->only('name', 'category_id'));
+        $racingTeam = RacingTeam::create($request->only('name', 'category_id'));
+
+        Team::create([
+            'racing_team_id' => $racingTeam->id,
+            'driver_id' => null,
+            'co_driver_id' => null,
+        ]);
 
         return redirect()->route('admin.racing_teams.index')->with('success', 'Equipo de carreras creado correctamente.');
     }
