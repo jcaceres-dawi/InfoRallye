@@ -26,7 +26,6 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
         }
 
         .navbar {
@@ -58,7 +57,6 @@
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
             margin-top: 0;
-            /* opcional: evita salto visual */
         }
 
         h1 {
@@ -79,7 +77,6 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
             flex: 1;
-            /* Hace que el contenedor principal ocupe el espacio disponible */
         }
 
         .footer {
@@ -89,7 +86,6 @@
             text-align: center;
             padding: 1rem 0;
             margin-top: auto;
-            /* Empuja el footer al fondo */
         }
 
         .footer p {
@@ -107,10 +103,21 @@
             margin-right: 1rem;
         }
 
-        /* Hover effect for social media links */
         .footer a:hover {
             color: var(--rojo-rallye);
-            /* Change color on hover */
+        }
+
+        .dropdown-menu {
+            background-color: var(--blanco-puro);
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: var(--negro-carbon);
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            color: var(--rojo-rallye);
+            background-color: transparent;
         }
     </style>
     @yield('styles')
@@ -143,18 +150,22 @@
 
                     @if(session('admin_authenticated'))
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-warning fw-bold" href="{{ route('admin.login') }}" id="adminDropdown" role="button">
-                            Panel Admin
+                        <a class="nav-link dropdown-toggle text-warning fw-bold" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
                             <li>
+                                <a class="dropdown-item" href="{{ route('admin.login') }}">Panel</a>
+                            </li>
+                            <li>
                                 <form method="POST" action="{{ route('admin.logout') }}">
                                     @csrf
-                                    <button type="submit" class="dropdown-item text-danger">Cerrar sesión</button>
+                                    <button type="submit" class="dropdown-item">Cerrar sesión</button>
                                 </form>
                             </li>
                         </ul>
                     </li>
+
                     @endif
 
                 </ul>
