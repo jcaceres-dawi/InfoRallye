@@ -21,10 +21,16 @@
 
         <!-- Solo permitir la edición del tiempo -->
         <div class="mb-3">
-            <label>Tiempo (HH:MM:SS)</label>
-            <!-- Convertir el tiempo al formato adecuado HH:MM:SS -->
-            <input type="time" name="time" value="{{ \Carbon\Carbon::parse($stageResult->time)->format('H:i:s') }}" class="form-control" required>
+            <label>Tiempo</label>
+            <div class="d-flex gap-2">
+                <input type="number" name="hours" value="{{ \Carbon\Carbon::parse($stageResult->time)->format('H') }}" min="0" max="23" class="form-control" required>
+                <span>:</span>
+                <input type="number" name="minutes" value="{{ \Carbon\Carbon::parse($stageResult->time)->format('i') }}" min="0" max="59" class="form-control" required>
+                <span>:</span>
+                <input type="number" name="seconds" value="{{ \Carbon\Carbon::parse($stageResult->time)->format('s') }}" min="0" max="59" class="form-control" required>
+            </div>
         </div>
+
 
         <button type="submit" class="btn btn-success">Actualizar</button>
     </form>

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\Models\Rally;
-use App\Models\Stage;
-use App\Models\Ranking;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -35,7 +33,8 @@ class RankingController extends Controller
         return $rally->teams->map(function ($team) use ($rally) {
             $totalSeconds = $rally->stages->sum(function ($stage) use ($team) {
                 $result = $stage->results->firstWhere('team_id', $team->id);
-                return $result ? Carbon::parse($result->time)->timestamp : 0;
+                return $result ? strtotime($result->time) - strtotime('00:00:00') : 0;
+
             });
 
             return [

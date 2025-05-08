@@ -72,24 +72,20 @@ class StageResultsController extends Controller
     public function update(Request $request, StageResult $stageResult)
     {
         $request->validate([
-            'stage_id' => 'required|exists:stages,id',
-            'team_id' => 'required|exists:teams,id',
             'hours' => 'required|numeric|between:0,23',
             'minutes' => 'required|numeric|between:0,59',
             'seconds' => 'required|numeric|between:0,59',
         ]);
 
-        // Combina las horas, minutos y segundos en un formato adecuado para la base de datos
         $time = sprintf('%02d:%02d:%02d', $request->hours, $request->minutes, $request->seconds);
 
         $stageResult->update([
-            'stage_id' => $request['stage_id'],
-            'team_id' => $request['team_id'],
             'time' => $time,
         ]);
 
-        return redirect()->route('admin.stage_results.index')->with('success', 'Resultado de etapa actualizado.');
+        return redirect()->route('admin.stage_results.index')->with('success', 'Tiempo actualizado correctamente.');
     }
+
 
     public function destroy(StageResult $stageResult)
     {
