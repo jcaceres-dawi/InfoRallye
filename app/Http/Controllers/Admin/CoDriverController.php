@@ -6,6 +6,7 @@ use App\Models\CoDriver;
 use App\Models\RacingTeam;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 
 class CoDriverController extends Controller
 {
@@ -29,7 +30,12 @@ class CoDriverController extends Controller
             'racing_team_id' => 'nullable|exists:racing_teams,id',
         ]);
 
-        CoDriver::create($request->only('first_name', 'last_name', 'racing_team_id'));
+        $coDriver = CoDriver::create($request->only('first_name', 'last_name', 'racing_team_id'));
+
+        Team::updateOrCreate(
+            ['racing_team_id' => $request->racing_team_id],
+            ['co_driver_id' => $coDriver->id]
+        );
 
         return redirect()->route('admin.codrivers.index')->with('success', 'Piloto creado correctamente.');
     }
