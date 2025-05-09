@@ -19,6 +19,16 @@
     </form>
 
     @if(request('stage_id') && $teams->isNotEmpty())
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    
     <form method="POST" action="{{ route('admin.stage_results.store') }}">
         @csrf
         <input type="hidden" name="stage_id" value="{{ request('stage_id') }}">
@@ -41,28 +51,28 @@
                 <select name="hours" class="form-control" required>
                     <option value="">Horas</option>
                     @for($i = 0; $i < 24; $i++)
-                    <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">
+                        <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">
                         {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                    </option>
-                    @endfor
+                        </option>
+                        @endfor
                 </select>
 
                 <select name="minutes" class="form-control" required>
                     <option value="">Minutos</option>
                     @for($i = 0; $i < 60; $i++)
-                    <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">
+                        <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">
                         {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                    </option>
-                    @endfor
+                        </option>
+                        @endfor
                 </select>
 
                 <select name="seconds" class="form-control" required>
                     <option value="">Segundos</option>
                     @for($i = 0; $i < 60; $i++)
-                    <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">
+                        <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}">
                         {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                    </option>
-                    @endfor
+                        </option>
+                        @endfor
                 </select>
             </div>
         </div>
@@ -85,7 +95,7 @@
     }
 
     .btn-dark:hover {
-        background-color: #E10600; 
+        background-color: #E10600;
         border-color: #E10600;
     }
 

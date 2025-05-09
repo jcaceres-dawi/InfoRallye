@@ -46,7 +46,14 @@ class StageResultsController extends Controller
             'seconds' => 'required|numeric|between:0,59',
         ]);
 
-        // Combina las horas, minutos y segundos en un formato adecuado para la base de datos
+        $exists = StageResult::where('stage_id', $request->stage_id)
+            ->where('team_id', $request->team_id)
+            ->exists();
+
+        if ($exists) {
+            return back()->withErrors(['team_id' => 'Este equipo ya tiene un resultado registrado para esta etapa.'])->withInput();
+        }
+
         $time = sprintf('%02d:%02d:%02d', $request->hours, $request->minutes, $request->seconds);
 
         StageResult::create([
