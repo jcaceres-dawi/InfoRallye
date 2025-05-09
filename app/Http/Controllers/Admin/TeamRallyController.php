@@ -15,12 +15,28 @@ class TeamRallyController extends Controller
         return view('admin.team_rally.index', compact('teamRallies'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        $teams = Team::all();
-        $rallies = Rally::all();
-        return view('admin.team_rally.create', compact('teams', 'rallies'));
+        $rallies = Rally::with('category')->get();
+        $teams = collect();
+
+        $selectedRallyId = $request->input('rally_id');
+
+        if ($selectedRallyId) {
+            $rally = Rally::with('category')->find($selectedRallyId);
+
+            if ($rally) {
+                $teams = Team::whereHas('racingTeam', function ($query) use ($rally) {
+                    $query->where('category_id', $rally->category_id);
+                })
+                    ->with('racingTeam')
+                    ->get();
+            }
+        }
+
+        return view('admin.team_rally.create', compact('rallies', 'teams'));
     }
+
 
     public function store(Request $request)
     {
@@ -31,12 +47,10 @@ class TeamRallyController extends Controller
 
         $team = Team::find($request->team_id);
 
-        // Verificar si la relación ya existe
         if ($team->rallies()->where('rallies.id', $request->rally_id)->exists()) {
             return back()->withErrors(['rally_id' => 'Esta relación ya existe.']);
         }
 
-        // Crear la relación
         $team->rallies()->attach($request->rally_id);
 
         return redirect()->route('admin.team_rally.index')->with('success', 'Relación creada correctamente.');

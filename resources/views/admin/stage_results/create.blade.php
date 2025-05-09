@@ -4,6 +4,16 @@
 <div class="container">
     <h2>Registrar Resultado de Tramo</h2>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form method="GET" action="{{ route('admin.stage_results.create') }}">
         <div class="mb-3">
             <label>Etapa</label>
@@ -19,16 +29,7 @@
     </form>
 
     @if(request('stage_id') && $teams->isNotEmpty())
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul class="mb-0">
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-    
+
     <form method="POST" action="{{ route('admin.stage_results.store') }}">
         @csrf
         <input type="hidden" name="stage_id" value="{{ request('stage_id') }}">

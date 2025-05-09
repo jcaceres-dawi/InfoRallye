@@ -12,9 +12,9 @@
         $sections = [
         'Rallyes' => 'rallies',
         'Tramos' => 'stages',
+        'Equipos' => 'racing_teams',
         'Pilotos' => 'drivers',
         'Copilotos' => 'codrivers',
-        'Equipos' => 'racing_teams',
         'Participaciones' => 'team_rally',
         'Resultados Tramos' => 'stage_results',
         ];
