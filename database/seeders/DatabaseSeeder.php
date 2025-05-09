@@ -21,9 +21,8 @@ class DatabaseSeeder extends Seeder
                 RalliesSeeder::class,
                 StagesSeeder::class,
                 TeamsSeeder::class,
-                RankingsSeeder::class,
-                StageResultsSeeder::class,
                 TeamRallySeeder::class,
+                StageResultsSeeder::class,
             ]
         );
     }

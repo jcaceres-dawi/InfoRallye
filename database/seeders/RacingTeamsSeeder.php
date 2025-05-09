@@ -24,14 +24,26 @@ class RacingTeamsSeeder extends Seeder
             ['name' => 'TH-Trucks Rally Team', 'category_id' => 4],
             ['name' => 'Mavisa Sport', 'category_id' => 1],
             ['name' => 'Escudería Faraón', 'category_id' => 2],
-            ['name' => 'Hyundai España', 'category_id' => 1],  // Nuevo equipo
-            ['name' => 'Citroën España', 'category_id' => 2],  // Nuevo equipo
-            ['name' => 'Peugeot Sport', 'category_id' => 3],  // Nuevo equipo
-            ['name' => 'Ford España', 'category_id' => 3],    // Nuevo equipo
-            ['name' => 'Toyota Gazoo Racing Spain', 'category_id' => 1], // Nuevo equipo
-            ['name' => 'M-Sport', 'category_id' => 2],        // Nuevo equipo
-            ['name' => 'Skoda Motorsport', 'category_id' => 3], // Nuevo equipo
-            ['name' => 'Repsol Rally Team', 'category_id' => 4], // Nuevo equipo
+            ['name' => 'Hyundai España', 'category_id' => 1],
+            ['name' => 'Citroën España', 'category_id' => 2],
+            ['name' => 'Peugeot Sport', 'category_id' => 3],
+            ['name' => 'Ford España', 'category_id' => 3],
+            ['name' => 'Toyota Gazoo Racing Spain', 'category_id' => 1],
+            ['name' => 'M-Sport', 'category_id' => 2],
+            ['name' => 'Skoda Motorsport', 'category_id' => 3],
+            ['name' => 'Repsol Rally Team', 'category_id' => 4],
+            ['name' => 'Grupo A Competición', 'category_id' => 1],
+            ['name' => 'MC Racing', 'category_id' => 2],
+            ['name' => 'C.D. Auto Gomas', 'category_id' => 1],
+            ['name' => 'Nupel Global Racing', 'category_id' => 2],
+            ['name' => 'La Base Motor Club', 'category_id' => 3],
+            ['name' => 'ProRally Team', 'category_id' => 4],
+            ['name' => 'Escudería Ourense', 'category_id' => 1],
+            ['name' => 'Escudería Rías Baixas', 'category_id' => 2],
+            ['name' => 'C.D. Vallejo Racing', 'category_id' => 3],
+            ['name' => 'Red Camel Rally Team', 'category_id' => 4],
+            ['name' => 'Extreme Rally Team', 'category_id' => 4],
+            ['name' => 'Andinas Racing', 'category_id' => 1],
         ];
 
 
