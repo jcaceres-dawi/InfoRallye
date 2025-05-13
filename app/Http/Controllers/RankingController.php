@@ -22,6 +22,7 @@ class RankingController extends Controller
         return view('rankings.show', compact('rally', 'rankings'));
     }
 
+
     public function downloadPdf(Rally $rally)
     {
         $rankings = $this->calculateRanking($rally);
@@ -30,18 +31,35 @@ class RankingController extends Controller
 
     private function calculateRanking(Rally $rally)
     {
-        return $rally->teams->map(function ($team) use ($rally) {
-            $totalSeconds = $rally->stages->sum(function ($stage) use ($team) {
-                $result = $stage->results->firstWhere('team_id', $team->id);
-                return $result ? strtotime($result->time) - strtotime('00:00:00') : 0;
+        $completed = [];
+        $incomplete = [];
 
+        $stageCount = $rally->stages->count();
+
+        foreach ($rally->teams as $team) {
+            $results = $rally->stages->map(function ($stage) use ($team) {
+                return $stage->results->firstWhere('team_id', $team->id);
             });
 
-            return [
-                'team' => $team,
-                'total_seconds' => $totalSeconds,
-                'formatted_time' => gmdate('H:i:s', $totalSeconds),
-            ];
-        })->sortBy('total_seconds')->values();
+            // Verifica si el equipo tiene tiempo para cada tramo
+            if ($results->contains(null)) {
+                $incomplete[] = $team;
+            } else {
+                $totalSeconds = $results->sum(function ($result) {
+                    return strtotime($result->time) - strtotime('00:00:00');
+                });
+
+                $completed[] = [
+                    'team' => $team,
+                    'total_seconds' => $totalSeconds,
+                    'formatted_time' => gmdate('H:i:s', $totalSeconds),
+                ];
+            }
+        }
+
+        return [
+            'completed' => collect($completed)->sortBy('total_seconds')->values(),
+            'incomplete' => collect($incomplete),
+        ];
     }
 }

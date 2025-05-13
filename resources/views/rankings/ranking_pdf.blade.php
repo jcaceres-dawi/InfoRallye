@@ -75,10 +75,10 @@
         </thead>
         <tbody>
             @php
-            $leaderSeconds = $rankings->first()['total_seconds'];
+            $leaderSeconds = $rankings['completed']->first()['total_seconds'];
             @endphp
 
-            @foreach($rankings as $index => $entry)
+            @foreach($rankings['completed'] as $index => $entry)
             @php
             $diffSeconds = $entry['total_seconds'] - $leaderSeconds;
             $diffFormatted = $diffSeconds > 0 ? gmdate('H:i:s', $diffSeconds) : '-';
@@ -99,6 +99,27 @@
             @endforeach
         </tbody>
     </table>
+    @if($rankings['incomplete']->isNotEmpty())
+    <h2 style="margin-top: 40px; text-align:center;">Equipos no clasificados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Equipo</th>
+                <th>Observación</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($rankings['incomplete'] as $team)
+            <tr>
+                <td>{{ $team->racingTeam->name ?? 'Sin equipo' }}</td>
+                <td>No completó todos los tramos</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @endif
+
 </body>
 
 </html>

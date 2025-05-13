@@ -17,14 +17,34 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($rankings as $index => $ranking)
-                <tr>
-                    <td>{{ $index + 1 }}</td>
-                    <td>{{ $ranking['team']->racingTeam->name}}</td>
-                    <td>{{ $ranking['formatted_time'] }}</td>
-                </tr>
+            @foreach($rankings['completed'] as $index => $ranking)
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ $ranking['team']->racingTeam->name}}</td>
+                <td>{{ $ranking['formatted_time'] }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>
+    @if($rankings['incomplete']->isNotEmpty())
+    <h3 class="mt-5 text-center">Equipos no clasificados</h3>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Equipo</th>
+                <th>Observación</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($rankings['incomplete'] as $team)
+            <tr>
+                <td>{{ $team->racingTeam->name ?? 'Sin equipo' }}</td>
+                <td>No completó todos los tramos</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @endif
+
 </div>
 @endsection
