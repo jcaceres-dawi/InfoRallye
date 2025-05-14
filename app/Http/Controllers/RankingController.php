@@ -11,7 +11,7 @@ class RankingController extends Controller
 {
     public function index()
     {
-        $rallies = Rally::where('end_date', '<', now())->get();
+        $rallies = Rally::where('end_date', '<', now())->orderBy('start_date', 'desc')->get();
 
         return view('rankings.index', compact('rallies'));
     }
