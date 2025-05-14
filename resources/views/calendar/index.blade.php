@@ -18,7 +18,9 @@
             </div>
 
             <div class="col-md-4">
-                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <button type="submit" class="btn btn-primary" title="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
     </form>
