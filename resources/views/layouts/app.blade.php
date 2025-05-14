@@ -126,7 +126,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">InfoRallye</a>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="{{ asset('images/logo_recortado.png') }}" alt="InfoRallye Logo" style="height: 55px; border-radius: 5px;" class="me-2">
+                InfoRallye</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -178,10 +180,17 @@
     </div>
 
     <footer class="footer mt-auto">
-        <div class="container">
-            <p>&copy; {{ date('Y') }} InfoRallye. Todos los derechos reservados.</p>
-            <p>Soporte: soporteinforallye@gmail.com</p>
+        <div class="container d-flex flex-column justify-content-between align-items-center">
             <div>
+                <p class="mb-0">&copy; {{ date('Y') }} InfoRallye. Todos los derechos reservados.</p>
+                <p class="mb-0">
+                    Soporte: soporteinforallye@gmail.com
+                    <a href="{{ url('/admin') }}" class="ms-2" title="Panel de Administración">
+                        <i class="fas fa-user-gear"></i>
+                    </a>
+                </p>
+            </div>
+            <div class="mt-3 mt-md-0">
                 <a href="https://www.facebook.com/" target="_blank" class="me-3">
                     <i class="fab fa-facebook"></i> Facebook
                 </a>
