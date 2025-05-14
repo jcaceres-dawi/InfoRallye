@@ -19,17 +19,14 @@ class StageController extends Controller
     {
         $stage = Stage::findOrFail($stageId);
 
-        // Obtener los resultados del stage
         $results = StageResult::where('stage_id', $stageId)->get();
 
         $results = $stage->results->sortBy(function ($result) {
             return Carbon::createFromFormat('Y-m-d H:i:s', $result->time)->timestamp;
         })->values();
 
-        // Generar el PDF con los datos obtenidos
         $pdf = Pdf::loadView('stages.results_pdf', compact('stage', 'results'));
 
-        // Descargar el PDF
         return $pdf->download('resultados_stage_' . $stage->id . '.pdf');
     }
 }
