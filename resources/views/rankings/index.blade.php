@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-center mb-4">Clasificaciones de Rallys Finalizados {{ \Carbon\Carbon::parse($rallies[0]->end_date)->format('Y') }}</h1>
+    <h1 class="text-center mb-4">Clasificaciones de Rallyes Finalizados {{ \Carbon\Carbon::parse($rallies[0]->end_date)->format('Y') }}</h1>
 
     <ul class="list-group">
         @forelse($rallies as $rally)
