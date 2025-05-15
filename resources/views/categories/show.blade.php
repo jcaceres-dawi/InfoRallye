@@ -12,8 +12,8 @@
 <div class="row justify-content-center">
     @foreach ($rallies as $rally)
     <div class="col-md-8 mb-3">
-        <a href="{{ route('rallys.index', $rally->id) }}" class="text-decoration-none">
-            <div class="card shadow-sm border-0 position-relative hover-shadow">
+        <a href="{{ route('rallys.index', $rally->id) }}" class="rally-link">
+            <div class="rally-card">
                 @php
                 $isEnded = \Carbon\Carbon::parse($rally->end_date)->isPast();
                 @endphp
@@ -21,7 +21,7 @@
                     {{ $isEnded ? 'Finalizado' : 'Próximamente' }}
                 </span>
 
-                <div class="card-body">
+                <div class="rally-card-body">
                     <h5 class="card-title mb-1">{{ $rally->name }}</h5>
                     <p class="card-text mb-1 text-muted"><strong>Ubicación:</strong> {{ $rally->location }}</p>
                     <p class="card-text text-muted">
@@ -33,8 +33,44 @@
             </div>
         </a>
     </div>
+
     @endforeach
 </div>
+@endsection
 
-</div>
+@section('styles')
+<style>
+    .rally-link {
+        text-decoration: none;
+    }
+
+    .rally-card {
+        background-color: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        padding: 1.5rem;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        color: black;
+    }
+
+    .rally-card:hover {
+        transform: scale(1.05) translateY(-8px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    .rally-card-body {
+        position: relative;
+        z-index: 2;
+    }
+
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.4em 0.75em;
+        border-radius: 0.5rem;
+    }
+</style>
+
 @endsection
