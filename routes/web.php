@@ -36,21 +36,18 @@ Route::get('/rankings/{rally}', [RankingController::class, 'show'])->name('ranki
 Route::get('/rankings/{rally}/pdf', [RankingController::class, 'downloadPdf'])->name('rankings.pdf');
 
 Route::match(['get', 'post'], '/admin', function (Request $request) {
-    // Si ya está autenticado, mostrar el dashboard
     if ($request->session()->get('admin_authenticated') === true) {
         return view('admin.dashboard');
     }
 
-    // Si es POST, validar la contraseña
     if ($request->isMethod('post')) {
-        if ($request->password === env('ADMIN_PASSWORD', 'secreta123')) {
+        if ($request->password === env('ADMIN_PASSWORD')) {
             $request->session()->put('admin_authenticated', true);
             return redirect('/admin');
         }
         return back()->withErrors(['password' => 'Contraseña incorrecta']);
     }
 
-    // Si no está autenticado y es GET, mostrar el formulario
     return view('admin.login');
 })->name('admin.login');
 

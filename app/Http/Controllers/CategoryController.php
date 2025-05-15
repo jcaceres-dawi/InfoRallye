@@ -22,7 +22,6 @@ class CategoryController extends Controller
         return view('categories.index', compact('categories', 'categoryImages'));
     }
 
-
     public function show(Category $category)
     {
         $rallies = Rally::where('category_id', $category->id)->orderBy('start_date')->get();

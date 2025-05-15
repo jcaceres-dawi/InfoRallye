@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Stage;
 use App\Models\StageResult;
-use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 

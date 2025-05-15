@@ -33,18 +33,16 @@ class StageController extends Controller
 
         $route = json_decode($request['full_route'], true);
 
-        // Validación de que haya al menos dos puntos en la ruta (inicio y fin)
         if (count($route) < 2) {
             return back()->withErrors(['full_route' => 'Debes marcar al menos dos puntos (inicio y fin).']);
         }
 
-        // Crear el nuevo tramo
         Stage::create([
             'rally_id' => $request['rally_id'],
             'name' => $request['name'],
             'surface' => $request['surface'],
             'length_km' => $request['length_km'],
-            'route' => $request['full_route'], // Guardamos la ruta completa directamente
+            'route' => $request['full_route'],
         ]);
 
         return redirect()->route('admin.stages.index')->with('success', 'Tramo creado correctamente.');
@@ -54,7 +52,6 @@ class StageController extends Controller
     {
         $rallyes = Rally::all();
 
-        // Convertimos los puntos de la ruta en un formato adecuado para el mapa
         $route = json_decode($stage->route, true) ?? [];
 
         $stage->full_route = $route;
@@ -74,18 +71,16 @@ class StageController extends Controller
 
         $route = json_decode($request['full_route'], true);
 
-        // Validación de que haya al menos dos puntos en la ruta (inicio y fin)
         if (count($route) < 2) {
             return back()->withErrors(['full_route' => 'Debes marcar al menos dos puntos (inicio y fin).'])->withInput();
         }
 
-        // Actualizamos el tramo con los nuevos datos
         $stage->update([
             'rally_id' => $request['rally_id'],
             'name' => $request['name'],
             'surface' => $request['surface'],
             'length_km' => $request['length_km'],
-            'route' => $request['full_route'], // Actualizamos la ruta completa
+            'route' => $request['full_route'],
         ]);
 
         return redirect()->route('admin.stages.index')->with('success', 'Tramo actualizado.');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Rally;
-use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class RankingController extends Controller
@@ -34,14 +33,11 @@ class RankingController extends Controller
         $completed = [];
         $incomplete = [];
 
-        $stageCount = $rally->stages->count();
-
         foreach ($rally->teams as $team) {
             $results = $rally->stages->map(function ($stage) use ($team) {
                 return $stage->results->firstWhere('team_id', $team->id);
             });
 
-            // Verifica si el equipo tiene tiempo para cada tramo
             if ($results->contains(null)) {
                 $incomplete[] = $team;
             } else {

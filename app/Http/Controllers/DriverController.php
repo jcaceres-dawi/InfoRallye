@@ -30,7 +30,6 @@ class DriverController extends Controller
         }
 
         $categories = Category::all();
-        
 
         return view('competitors.index', compact('competitors', 'categories'));
     }

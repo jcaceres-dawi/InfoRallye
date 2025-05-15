@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Stage;
-use App\Models\Team;
 use App\Models\StageResult;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -67,10 +66,8 @@ class StageResultsController extends Controller
 
     public function edit(StageResult $stageResult)
     {
-        // Cargar las etapas con sus rallies
         $stages = Stage::with('rally')->get();
 
-        // Cargar los equipos relacionados con la etapa actual
         $teams = $stageResult->stage->rally->teams;
 
         return view('admin.stage_results.edit', compact('stageResult', 'stages', 'teams'));

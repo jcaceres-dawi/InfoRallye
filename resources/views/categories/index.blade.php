@@ -46,7 +46,6 @@
         position: absolute;
         inset: 0;
         background-color: rgba(28, 28, 28, 0.6);
-        /* negro carbón con opacidad */
         border-radius: 12px;
         transition: background-color 0.3s ease;
     }

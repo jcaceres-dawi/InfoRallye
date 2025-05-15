@@ -7,19 +7,16 @@
         @method('PUT')
         @csrf
 
-        <!-- Mostrar la etapa como texto no editable -->
         <div class="mb-3">
             <label>Etapa</label>
             <input type="text" value="{{ $stageResult->stage->rally->name }} - {{ $stageResult->stage->name }}" class="form-control" readonly>
         </div>
 
-        <!-- Mostrar el equipo como texto no editable -->
         <div class="mb-3">
             <label>Equipo</label>
             <input type="text" value="{{ $stageResult->team->racingTeam->name }}" class="form-control" readonly>
         </div>
 
-        <!-- Solo permitir la edición del tiempo -->
         <div class="mb-3">
             <label>Tiempo</label>
             <div class="d-flex gap-2">
