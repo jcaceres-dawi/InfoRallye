@@ -10,34 +10,36 @@
         <i class="fas fa-file-pdf"></i> Descargar PDF
     </a>
 
-    <table class="table table-bordered text-center">
-        <thead class="table-dark">
-            <tr>
-                <th>Posición</th>
-                <th>Equipo</th>
-                <th>Tiempo Total</th>
-                <th>Diferencia</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php
-            $leaderSeconds = $rankings['completed']->first()['total_seconds'];
-            @endphp
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Posición</th>
+                    <th>Equipo</th>
+                    <th>Tiempo Total</th>
+                    <th>Diferencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                $leaderSeconds = $rankings['completed']->first()['total_seconds'];
+                @endphp
 
-            @foreach($rankings['completed'] as $index => $ranking)
-            @php
-            $diffSeconds = $ranking['total_seconds'] - $leaderSeconds;
-            $diffFormatted = $diffSeconds > 0 ? gmdate('H:i:s', $diffSeconds) : '-';
-            @endphp
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $ranking['team']->racingTeam->name }}</td>
-                <td>{{ $ranking['formatted_time'] }}</td>
-                <td>{{ $diffFormatted }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+                @foreach($rankings['completed'] as $index => $ranking)
+                @php
+                $diffSeconds = $ranking['total_seconds'] - $leaderSeconds;
+                $diffFormatted = $diffSeconds > 0 ? gmdate('H:i:s', $diffSeconds) : '-';
+                @endphp
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $ranking['team']->racingTeam->name }}</td>
+                    <td>{{ $ranking['formatted_time'] }}</td>
+                    <td>{{ $diffFormatted }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
     @if($rankings['incomplete']->isNotEmpty())
     <h3 class="mt-5 text-center">Equipos no clasificados</h3>

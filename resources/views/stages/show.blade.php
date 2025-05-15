@@ -25,30 +25,32 @@
     $results = $stage->results->sortBy('time')->values();
     $leaderTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $results->first()->time);
     @endphp
-    <table class="table table-bordered text-center">
-        <thead class="table-dark">
-            <tr>
-                <th>Posición</th>
-                <th>Equipo</th>
-                <th>Tiempo</th>
-                <th>Diferencia</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($results as $index => $result)
-            @php
-            $currentTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $result->time);
-            $diff = $leaderTime->diff($currentTime)->format('%H:%I:%S');
-            @endphp
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $result->team->racingTeam->name ?? 'Sin equipo' }}</td>
-                <td>{{ $currentTime->format('H:i:s') }}</td>
-                <td>{{ $index === 0 ? '-' : $diff }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Posición</th>
+                    <th>Equipo</th>
+                    <th>Tiempo</th>
+                    <th>Diferencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($results as $index => $result)
+                @php
+                $currentTime = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $result->time);
+                $diff = $leaderTime->diff($currentTime)->format('%H:%I:%S');
+                @endphp
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $result->team->racingTeam->name ?? 'Sin equipo' }}</td>
+                    <td>{{ $currentTime->format('H:i:s') }}</td>
+                    <td>{{ $index === 0 ? '-' : $diff }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
     @else
     <p class="text-muted text-center">No hay resultados disponibles para este tramo.</p>
     @endif
