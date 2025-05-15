@@ -14,15 +14,16 @@
     <div class="col-md-8 mb-3">
         <a href="{{ route('rallys.index', $rally->id) }}" class="rally-link">
             <div class="rally-card">
-                @php
-                $isEnded = \Carbon\Carbon::parse($rally->end_date)->isPast();
-                @endphp
-                <span class="badge bg-{{ $isEnded ? 'danger' : 'success' }} position-absolute top-0 end-0 m-3">
-                    {{ $isEnded ? 'Finalizado' : 'Próximamente' }}
-                </span>
-
                 <div class="rally-card-body">
-                    <h5 class="card-title mb-1">{{ $rally->name }}</h5>
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title mb-1">{{ $rally->name }}</h5>
+                        @php
+                        $isEnded = \Carbon\Carbon::parse($rally->end_date)->isPast();
+                        @endphp
+                        <span class="badge bg-{{ $isEnded ? 'danger' : 'success' }}">
+                            {{ $isEnded ? 'Finalizado' : 'Próximamente' }}
+                        </span>
+                    </div>
                     <p class="card-text mb-1 text-muted"><strong>Ubicación:</strong> {{ $rally->location }}</p>
                     <p class="card-text text-muted">
                         <strong>Fecha:</strong>
@@ -31,6 +32,7 @@
                     </p>
                 </div>
             </div>
+
         </a>
     </div>
 
@@ -70,6 +72,13 @@
         font-size: 0.85rem;
         padding: 0.4em 0.75em;
         border-radius: 0.5rem;
+    }
+
+    @media (max-width: 576px) {
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.3em 0.6em;
+        }
     }
 </style>
 
