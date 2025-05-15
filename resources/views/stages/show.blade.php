@@ -82,14 +82,16 @@ $end = $checkpoints[count($checkpoints) - 1];
         L.marker(startLatLng, {
             icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png',
                 iconSize: [32, 32],
-                iconAnchor: [16, 32]
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
             })
         }).addTo(map).bindPopup('Inicio');
 
         L.marker(endLatLng, {
             icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png',
                 iconSize: [32, 32],
-                iconAnchor: [16, 32]
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
             })
         }).addTo(map).bindPopup('Fin');
 
@@ -100,7 +102,8 @@ $end = $checkpoints[count($checkpoints) - 1];
             L.marker(latlng, {
                 icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/yellow-dot.png',
                     iconSize: [32, 32],
-                    iconAnchor: [16, 32]
+                    iconAnchor: [16, 32],
+                    popupAnchor: [0, -32]
                 })
             }).addTo(map).bindPopup('Checkpoint ' + (i + 1));
             route.push(latlng);
