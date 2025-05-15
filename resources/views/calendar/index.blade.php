@@ -6,7 +6,7 @@
 
     <form method="GET" action="{{ route('calendar.index') }}" class="mb-4">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <select name="category_id" class="form-select">
                     <option value="">Todas las categorías</option>
                     @foreach ($categories as $category)
@@ -26,56 +26,60 @@
     </form>
 
     <div class="d-flex mb-4">
-        <button class="btn btn-success me-2" id="btn-upcoming">Próximos Rallyes</button>
-        <button class="btn btn-danger" id="btn-past">Rallyes Finalizados</button>
+        <button class="btn btn-success me-2" id="btn-upcoming">Próximos</button>
+        <button class="btn btn-danger" id="btn-past">Finalizados</button>
     </div>
 
     <div id="upcoming-section">
         <h2 class="mb-3 text-success">Próximos Rallyes</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Ubicación</th>
-                    <th>Fecha</th>
-                    <th>Categoría</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($upcomingRallies as $rally)
-                <tr onclick="location.href='{{ route('rallys.index', $rally->id) }}'" style="cursor: pointer;">
-                    <td>{{ $rally->name }}</td>
-                    <td>{{ $rally->location }}</td>
-                    <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
-                    <td>{{ $rally->category->name }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ubicación</th>
+                        <th>Fecha</th>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($upcomingRallies as $rally)
+                    <tr onclick="location.href='{{ route('rallys.index', $rally->id) }}'" style="cursor: pointer;">
+                        <td>{{ $rally->name }}</td>
+                        <td>{{ $rally->location }}</td>
+                        <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
+                        <td>{{ $rally->category->name }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="past-section" style="display: none;">
         <h2 class="mb-3 text-danger">Rallyes Finalizados</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Ubicación</th>
-                    <th>Fecha</th>
-                    <th>Categoría</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($pastRallies as $rally)
-                <tr onclick="location.href='{{ route('rallys.index', $rally->id) }}'" style="cursor: pointer;">
-                    <td>{{ $rally->name }}</td>
-                    <td>{{ $rally->location }}</td>
-                    <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
-                    <td>{{ $rally->category->name }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ubicación</th>
+                        <th>Fecha</th>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($pastRallies as $rally)
+                    <tr onclick="location.href='{{ route('rallys.index', $rally->id) }}'" style="cursor: pointer;">
+                        <td>{{ $rally->name }}</td>
+                        <td>{{ $rally->location }}</td>
+                        <td>{{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }}</td>
+                        <td>{{ $rally->category->name }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
