@@ -80,11 +80,17 @@ $end = $checkpoints[count($checkpoints) - 1];
         const endLatLng = [{{ $end['lat'] }}, {{ $end['lng'] }}];
 
         L.marker(startLatLng, {
-            icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png' })
+            icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32]
+            })
         }).addTo(map).bindPopup('Inicio');
 
         L.marker(endLatLng, {
-            icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png' })
+            icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32]
+            })
         }).addTo(map).bindPopup('Fin');
 
         const route = [startLatLng];
@@ -92,7 +98,10 @@ $end = $checkpoints[count($checkpoints) - 1];
         checkpoints.slice(1, -1).forEach((p, i) => {
             const latlng = [p.lat, p.lng];
             L.marker(latlng, {
-                icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/yellow-dot.png' })
+                icon: L.icon({ iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/yellow-dot.png',
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32]
+                })
             }).addTo(map).bindPopup('Checkpoint ' + (i + 1));
             route.push(latlng);
         });

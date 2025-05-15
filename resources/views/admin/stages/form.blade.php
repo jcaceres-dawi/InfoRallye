@@ -83,9 +83,14 @@ $startLng = $routeData[0]['lng'] ?? -1.76;
                 popupText = `Checkpoint ${index}`;
         }
 
-        const marker = L.marker([lat, lng], {
-            icon: L.icon({ iconUrl })
-        }).addTo(map).bindPopup(popupText);
+        const icon = L.icon({
+            iconUrl,
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
+        const marker = L.marker([lat, lng], { icon }).addTo(map).bindPopup(popupText);
 
         markers.push(marker);
     }
@@ -113,19 +118,18 @@ $startLng = $routeData[0]['lng'] ?? -1.76;
         document.getElementById('route-input').value = JSON.stringify(routePoints);
     }
 
-    // Carga inicial (modo edición)
     if (Array.isArray(initialRoute) && initialRoute.length) {
         routePoints = initialRoute;
         renderRoute();
     }
 
-    // Evento clic
     map.on('click', function (e) {
         const { lat, lng } = e.latlng;
         routePoints.push({ lat, lng });
         renderRoute();
     });
 </script>
+
 @endpush
 
 @section('styles')
