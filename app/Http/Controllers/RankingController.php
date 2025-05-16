@@ -10,10 +10,23 @@ class RankingController extends Controller
 {
     public function index()
     {
-        $rallies = Rally::where('end_date', '<', now())->orderBy('start_date', 'desc')->get();
+        $currentYear = now()->year;
+        $selectedYear = request('year', $currentYear);
 
-        return view('rankings.index', compact('rallies'));
+        $availableYears = Rally::where('end_date', '<', now())
+            ->selectRaw('YEAR(end_date) as year')
+            ->distinct()
+            ->orderBy('year', 'desc')
+            ->pluck('year');
+
+        $rallies = Rally::whereYear('end_date', $selectedYear)
+            ->where('end_date', '<', now())
+            ->orderBy('start_date', 'desc')
+            ->get();
+
+        return view('rankings.index', compact('rallies', 'availableYears', 'selectedYear'));
     }
+
 
     public function show(Rally $rally)
     {
