@@ -15,7 +15,7 @@
         <p><strong>Fecha:</strong> {{ \Carbon\Carbon::parse($rally->start_date)->format('d/m/Y') }} - {{ \Carbon\Carbon::parse($rally->end_date)->format('d/m/Y') }}</p>
     </div>
 
-    <h3 class="mb-4 text-center">Tramos del Rally</h3>
+    <h3 class="mb-4 text-center">Tramos del Rallye</h3>
 
     <div class="row justify-content-center">
         @foreach ($rally->stages as $stage)

@@ -16,7 +16,7 @@
 
     <form method="GET" action="{{ route('admin.team_rally.create') }}">
         <div class="mb-3">
-            <label>Rally</label>
+            <label>Rallye</label>
             <select name="rally_id" class="form-control" onchange="this.form.submit()" required>
                 <option value="">Selecciona un rally</option>
                 @foreach($rallies as $rally)

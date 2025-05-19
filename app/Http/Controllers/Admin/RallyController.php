@@ -34,7 +34,7 @@ class RallyController extends Controller
 
         Rally::create($request->only('name', 'location', 'website', 'start_date', 'end_date', 'category_id'));
 
-        return redirect()->route('admin.rallies.index')->with('success', 'Rally creado correctamente.');
+        return redirect()->route('admin.rallies.index')->with('success', 'Rallye creado correctamente.');
     }
 
     public function edit(Rally $rally)
@@ -56,12 +56,12 @@ class RallyController extends Controller
 
         $rally->update($request->only('name', 'location', 'website', 'start_date', 'end_date', 'category_id'));
 
-        return redirect()->route('admin.rallies.index')->with('success', 'Rally actualizado.');
+        return redirect()->route('admin.rallies.index')->with('success', 'Rallye actualizado.');
     }
 
     public function destroy(Rally $rally)
     {
         $rally->delete();
-        return redirect()->route('admin.rallies.index')->with('success', 'Rally eliminado.');
+        return redirect()->route('admin.rallies.index')->with('success', 'Rallye eliminado.');
     }
 }

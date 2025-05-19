@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Relaciones Equipo-Rally</h2>
+    <h2>Relaciones Equipo-Rallye</h2>
     <a href="{{ route('admin.team_rally.create') }}" class="btn btn-dark mb-3">Nueva Relación</a>
 
     @if(session('success'))
@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th>Equipo</th>
-                    <th>Rally</th>
+                    <th>Rallye</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
