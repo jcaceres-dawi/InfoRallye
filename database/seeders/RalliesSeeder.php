@@ -89,7 +89,7 @@ class RalliesSeeder extends Seeder
             [
                 'name' => 'Rallye Interanacional Villa de Adeje',
                 'location' => 'Adeje, Canarias',
-                'website' => 'https://rallyevilladeadeje.com/',
+                'website' => 'https://www.rallyevilladeadeje.com/',
                 'start_date' => '2025-05-02',
                 'end_date' => '2025-05-03',
                 'category_id' => 2,
@@ -97,7 +97,7 @@ class RalliesSeeder extends Seeder
             [
                 'name' => 'Rallye Cidade de Narón',
                 'location' => 'Narón, Galicia',
-                'website' => 'https://rallyenaron.org/',
+                'website' => 'https://www.rallyenaron.org/',
                 'start_date' => '2025-05-23',
                 'end_date' => '2025-05-24',
                 'category_id' => 2,
