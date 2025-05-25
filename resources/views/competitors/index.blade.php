@@ -43,6 +43,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Equipo</th>
+                    <th>Tipo</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,9 +51,11 @@
                 <tr>
                     <td>{{ $competitor->first_name }} {{ $competitor->last_name }}</td>
                     <td>{{ $competitor->racingTeam->name ?? 'Sin equipo' }}</td>
+                    <td>{{ $competitor->role }}</td>
                 </tr>
                 @endforeach
             </tbody>
+
         </table>
     </div>
     <div>

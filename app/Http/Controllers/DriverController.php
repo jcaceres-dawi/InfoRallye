@@ -20,13 +20,36 @@ class DriverController extends Controller
         })->pluck('id');
 
         if ($role == 'driver') {
-            $competitors = Driver::whereIn('racing_team_id', $teams)->paginate(8);
+            $competitors = Driver::whereIn('racing_team_id', $teams)
+                ->select('*')
+                ->selectRaw("'Piloto' as role")
+                ->paginate(8);
         } elseif ($role == 'co_driver') {
-            $competitors = CoDriver::whereIn('racing_team_id', $teams)->paginate(8);
+            $competitors = CoDriver::whereIn('racing_team_id', $teams)
+                ->select('*')
+                ->selectRaw("'Copiloto' as role")
+                ->paginate(8);
         } else {
-            $drivers = Driver::whereIn('racing_team_id', $teams);
-            $coDrivers = CoDriver::whereIn('racing_team_id', $teams);
-            $competitors = $drivers->union($coDrivers)->paginate(9);
+            $drivers = Driver::whereIn('racing_team_id', $teams)
+                ->select('*')
+                ->selectRaw("'Piloto' as role");
+
+            $coDrivers = CoDriver::whereIn('racing_team_id', $teams)
+                ->select('*')
+                ->selectRaw("'Copiloto' as role");
+
+            $all = $drivers->unionAll($coDrivers)->get();
+
+            $page = $request->get('page', 1);
+            $perPage = 8;
+            $offset = ($page - 1) * $perPage;
+            $competitors = new \Illuminate\Pagination\LengthAwarePaginator(
+                $all->slice($offset, $perPage)->values(),
+                $all->count(),
+                $perPage,
+                $page,
+                ['path' => $request->url(), 'query' => $request->query()]
+            );
         }
 
         $categories = Category::all();
